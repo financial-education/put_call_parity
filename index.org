@@ -1,0 +1,71 @@
+#+title: Put-Call Parity
+#+author: Matt Brigida, Ph.D.
+#+email: matthew.brigida@sunypoly.edu
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+* Overview
+
+Put-Call Parity will allow us to price a put (or call) option given a call (or put), a bond and the stock. Conceptually, what the parity relationship is saying is that:
+
+#+BEGIN_QUOTE
+a protective put spread is equal to a call option plus bond position.
+#+END_QUOTE
+
+* No Dividend
+
+For a non-dividend paying stock, Put-Call Parity is:
+
+$$C_0 + \frac{X}{(1 + r_f)^T} = S_0 + P_0$$
+
+where:
+
+- both the call and put options have the same strike price and expiration.
+- the bond has an $X par value, which is the same as the strike price of the options.
+- you can interpret the 0 subscript as 'today'.
+- $r_f$ is risk-free rate for bonds maturing at the same time as the options expire.
+
+There are a couple important features of Put-Call Parity:
+
+- Applies to European options only.
+- Model and assumption free.
+
+** Proof
+   
+*** Payoff on Protective Put At Expiration 
+ 
+|       | S_T > X | S_T < X |
+|-------+---------+---------|
+| Stock | S_T     | S_T     |
+| Put   | 0       | X - S_T |
+|-------+---------+---------|
+| Total | S_T     | X       |
+
+*** Payoff on Call + Bond At Expiration
+
+|       | S_T > X | S_T < X |
+|-------+---------+---------|
+| Bond  | X       | X       |
+| Call  | S_T - X | 0       |
+|-------+---------+---------|
+| Total | S_T     | X       |
+
+
+** Arbitrage
+   
+If both portfolios pay the same amount at expiration, can they have different prices today?
+
+What if:
+
+$$C_0 + \frac{X}{(1 + r_f)^T} > S_0 + P_0$$
+
+
+
+* With Dividend
+  
+Let $D$ be the expected dividend payment on the stock over the life of the option.  Then the put-call parity relationship is:
+
+$$C_0 + \frac{X}{(1 + r_f)^T} + \frac{D}{(1 + r_f)^T} = S_0 + P_0$$
+
+
+
+** Proof
