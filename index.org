@@ -58,6 +58,7 @@ What if:
 
 $$C_0 + \frac{X}{(1 + r_f)^T} > S_0 + P_0$$
 
+Then today we sell the call option and bond, and buy the put option and stock.
 
 
 * With Dividend
@@ -69,3 +70,33 @@ $$C_0 + \frac{X}{(1 + r_f)^T} + \frac{D}{(1 + r_f)^T} = S_0 + P_0$$
 
 
 ** Proof
+
+   
+* Application
+
+
+Say we have the following values.  How much is the put option premium?
+
+#+name: first-calc
+| Stock Price    |  100 |
+| Risk-free rate | 0.05 |
+| Call strike    |  110 |
+| Call premium   | 1.00 |
+| time           |    1 |
+
+#+BEGIN_SRC python :var inputs=first-calc :results output :exports both
+stock = inputs[0][1]
+rate = inputs[1][1]
+strike = inputs[2][1]
+call_price = inputs[3][1]
+time = inputs[4][1]
+
+put_price = call_price + strike / (1 + rate)**time - stock
+
+print("Put price $", round(put_price, 1))
+#+END_SRC
+
+#+RESULTS:
+: Put price $ 5.8
+
+

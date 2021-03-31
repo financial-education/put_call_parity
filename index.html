@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-03-29 Mon 12:58 -->
+<!-- 2021-03-31 Wed 12:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Put-Call Parity</title>
@@ -262,29 +262,30 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2a19000">1. Overview</a></li>
-<li><a href="#orgf4f87f6">2. No Dividend</a>
+<li><a href="#org0849182">1. Overview</a></li>
+<li><a href="#org99400f4">2. No Dividend</a>
 <ul>
-<li><a href="#orgbb218c3">2.1. Proof</a>
+<li><a href="#orgef32157">2.1. Proof</a>
 <ul>
-<li><a href="#org1b25ba9">2.1.1. Payoff on Protective Put At Expiration</a></li>
-<li><a href="#org19cc1a1">2.1.2. Payoff on Call + Bond At Expiration</a></li>
+<li><a href="#org68f2c6b">2.1.1. Payoff on Protective Put At Expiration</a></li>
+<li><a href="#org223dc80">2.1.2. Payoff on Call + Bond At Expiration</a></li>
 </ul>
 </li>
-<li><a href="#org57321e3">2.2. Arbitrage</a></li>
+<li><a href="#org60041b1">2.2. Arbitrage</a></li>
 </ul>
 </li>
-<li><a href="#org52ce600">3. With Dividend</a>
+<li><a href="#org8eff832">3. With Dividend</a>
 <ul>
-<li><a href="#org28d5e6c">3.1. Proof</a></li>
+<li><a href="#org424ec4c">3.1. Proof</a></li>
 </ul>
 </li>
+<li><a href="#org0cf5748">4. Application</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2a19000" class="outline-2">
-<h2 id="org2a19000"><span class="section-number-2">1</span> Overview</h2>
+<div id="outline-container-org0849182" class="outline-2">
+<h2 id="org0849182"><span class="section-number-2">1</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Put-Call Parity will allow us to price a put (or call) option given a call (or put), a bond and the stock. Conceptually, what the parity relationship is saying is that:
@@ -298,8 +299,8 @@ a protective put spread is equal to a call option plus bond position.
 </div>
 </div>
 
-<div id="outline-container-orgf4f87f6" class="outline-2">
-<h2 id="orgf4f87f6"><span class="section-number-2">2</span> No Dividend</h2>
+<div id="outline-container-org99400f4" class="outline-2">
+<h2 id="org99400f4"><span class="section-number-2">2</span> No Dividend</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 For a non-dividend paying stock, Put-Call Parity is:
@@ -330,12 +331,12 @@ There are a couple important features of Put-Call Parity:
 </ul>
 </div>
 
-<div id="outline-container-orgbb218c3" class="outline-3">
-<h3 id="orgbb218c3"><span class="section-number-3">2.1</span> Proof</h3>
+<div id="outline-container-orgef32157" class="outline-3">
+<h3 id="orgef32157"><span class="section-number-3">2.1</span> Proof</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org1b25ba9" class="outline-4">
-<h4 id="org1b25ba9"><span class="section-number-4">2.1.1</span> Payoff on Protective Put At Expiration</h4>
+<div id="outline-container-org68f2c6b" class="outline-4">
+<h4 id="org68f2c6b"><span class="section-number-4">2.1.1</span> Payoff on Protective Put At Expiration</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -378,8 +379,8 @@ There are a couple important features of Put-Call Parity:
 </div>
 </div>
 
-<div id="outline-container-org19cc1a1" class="outline-4">
-<h4 id="org19cc1a1"><span class="section-number-4">2.1.2</span> Payoff on Call + Bond At Expiration</h4>
+<div id="outline-container-org223dc80" class="outline-4">
+<h4 id="org223dc80"><span class="section-number-4">2.1.2</span> Payoff on Call + Bond At Expiration</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -424,8 +425,8 @@ There are a couple important features of Put-Call Parity:
 </div>
 
 
-<div id="outline-container-org57321e3" class="outline-3">
-<h3 id="org57321e3"><span class="section-number-3">2.2</span> Arbitrage</h3>
+<div id="outline-container-org60041b1" class="outline-3">
+<h3 id="org60041b1"><span class="section-number-3">2.2</span> Arbitrage</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 If both portfolios pay the same amount at expiration, can they have different prices today?
@@ -438,14 +439,17 @@ What if:
 <p>
 \[C_0 + \frac{X}{(1 + r_f)^T} > S_0 + P_0\]
 </p>
+
+<p>
+Then today we sell the call option and bond, and buy the put option and stock.
+</p>
 </div>
 </div>
 </div>
 
 
-
-<div id="outline-container-org52ce600" class="outline-2">
-<h2 id="org52ce600"><span class="section-number-2">3</span> With Dividend</h2>
+<div id="outline-container-org8eff832" class="outline-2">
+<h2 id="org8eff832"><span class="section-number-2">3</span> With Dividend</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Let \(D\) be the expected dividend payment on the stock over the life of the option.  Then the put-call parity relationship is:
@@ -458,14 +462,78 @@ Let \(D\) be the expected dividend payment on the stock over the life of the opt
 
 
 
-<div id="outline-container-org28d5e6c" class="outline-3">
-<h3 id="org28d5e6c"><span class="section-number-3">3.1</span> Proof</h3>
+<div id="outline-container-org424ec4c" class="outline-3">
+<h3 id="org424ec4c"><span class="section-number-3">3.1</span> Proof</h3>
+</div>
+</div>
+
+
+<div id="outline-container-org0cf5748" class="outline-2">
+<h2 id="org0cf5748"><span class="section-number-2">4</span> Application</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Say we have the following values.  How much is the put option premium?
+</p>
+
+<table id="orgc1eb7e0" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Stock Price</td>
+<td class="org-right">100</td>
+</tr>
+
+<tr>
+<td class="org-left">Risk-free rate</td>
+<td class="org-right">0.05</td>
+</tr>
+
+<tr>
+<td class="org-left">Call strike</td>
+<td class="org-right">110</td>
+</tr>
+
+<tr>
+<td class="org-left">Call premium</td>
+<td class="org-right">1.00</td>
+</tr>
+
+<tr>
+<td class="org-left">time</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #6c71c4;">stock</span> = inputs<span style="color: #839496;">[</span>0<span style="color: #839496;">][</span>1<span style="color: #839496;">]</span>
+<span style="color: #6c71c4;">rate</span> = inputs<span style="color: #839496;">[</span>1<span style="color: #839496;">][</span>1<span style="color: #839496;">]</span>
+<span style="color: #6c71c4;">strike</span> = inputs<span style="color: #839496;">[</span>2<span style="color: #839496;">][</span>1<span style="color: #839496;">]</span>
+<span style="color: #6c71c4;">call_price</span> = inputs<span style="color: #839496;">[</span>3<span style="color: #839496;">][</span>1<span style="color: #839496;">]</span>
+<span style="color: #6c71c4;">time</span> = inputs<span style="color: #839496;">[</span>4<span style="color: #839496;">][</span>1<span style="color: #839496;">]</span>
+
+<span style="color: #6c71c4;">put_price</span> = call_price + strike / <span style="color: #839496;">(</span>1 + rate<span style="color: #839496;">)</span>**time - stock
+
+<span style="color: #859900;">print</span><span style="color: #839496;">(</span><span style="color: #2aa198;">"Put price $"</span>, <span style="color: #6c71c4;">round</span><span style="color: #2aa198;">(</span>put_price, 1<span style="color: #2aa198;">)</span><span style="color: #839496;">)</span>
+</pre>
+</div>
+
+<pre class="example">
+Put price $ 5.8
+
+</pre>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida, Ph.D.</p>
-<p class="date">Created: 2021-03-29 Mon 12:58</p>
+<p class="date">Created: 2021-03-31 Wed 12:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
